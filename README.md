@@ -23,21 +23,21 @@ https://github.com/thomasfla/Linux-ESPNOW
 
 
 ## Supported I2C devices
-| Support		| Name			| Description							|
-|---------------|---------------|---------------------------------------------------------------|
-|<ul>[x]</ul>	| BMP280 		| Temp, Altitude, Pressure					|
-|<ul>[ ]</ul>	| MPU-6050		| Gyro, Acceleremeter						|
-|<ul>[ ]</ul>	| LSM303D		| Compass, 3D accelerometer and 3D magnetometer module		|
-|<ul>[ ]</ul>	| MPU-9250		| Gyro, Accelerometer + AK8963 magnetometer			|
-|<ul>[ ]</ul>	| HMC5883		| Magnetomer							|
-|<ul>[ ]</ul>	| ITG-3200		| 'Gaming' gyro							|
-|<ul>[ ]</ul>	| INA219		| Bi-directional current meter					|
-|<ul>[ ]</ul>	| Wii IR Sensor	| Tracks the 4 brighest IR Points in FOV (Missile tracking?)	|
-|<ul>[ ]</ul>	| ZOE/SAM-M8Q	| GPS module							|
-|<ul>[ ]</ul>	| XA1110		| GPS module							|
-|<ul>[ ]</ul>	| LSM9DS1		| Gyro, Accelerometer, magnetometer				|
-|<ul>[ ]</ul>	| ADS1115		| 4-CH ADC							|
-|<ul>[ ]</ul>	| 24LC256		| EEPROM							|
+| Support			| Name			| Description													|
+|-------------------|---------------|---------------------------------------------------------------|
+|:heavy_check_mark:	| BMP280 		| Temp, Altitude, Pressure										|
+|:white_check_mark:	| MPU-6050		| Gyro, Acceleremeter											|
+|:white_check_mark:	| LSM303D		| Compass, 3D accelerometer and 3D magnetometer module			|
+|:white_check_mark:	| MPU-9250		| Gyro, Accelerometer + AK8963 magnetometer						|
+|:white_check_mark:	| HMC5883		| Magnetomer													|
+|:white_check_mark:	| ITG-3200		| 'Gaming' gyro													|
+|:white_check_mark:	| INA219		| Bi-directional current meter									|
+|:white_check_mark:	| Wii IR Sensor	| Tracks the 4 brighest IR Points in FOV (Missile tracking?)	|
+|:white_check_mark:	| ZOE/SAM-M8Q	| GPS module													|
+|:white_check_mark:	| XA1110		| GPS module													|
+|:white_check_mark:	| LSM9DS1		| Gyro, Accelerometer, magnetometer								|
+|:white_check_mark:	| ADS1115		| 4-CH ADC														|
+|:white_check_mark:	| 24LC256		| EEPROM														|
 
 ## Credit
 

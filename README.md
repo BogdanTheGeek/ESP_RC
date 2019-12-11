@@ -13,7 +13,7 @@ https://github.com/thomasfla/Linux-ESPNOW
 
 ## Features 
  - [x] Built in baterry voltage telemetry
- - [ ] I2C telemetry
+ - [x] I2C expansion port telemetry
  - [ ] Bluetooth controller support for ESP32
  - [ ] GPS support
  - [ ] Multiple vehicle profiles configurable via AP
@@ -31,6 +31,13 @@ Support	| Name		| Description
  - [ ]	| MPU-9250	| Gyro, Accelerometer + AK8963 magnetometer
  - [ ]	| HMC5883	| Magnetomer
  - [ ]	| ITG-3200	| 'Gaming' gyro
+ - [ ]	| INA219	| Bi-directional current meter
+ - [ ]	| Wii IR Sensor	| Tracks the 4 brighest IR Points in FOV (Missile tracking?)
+ - [ ]	| ZOE/SAM-M8Q	| GPS module
+ - [ ]	| XA1110	| GPS module
+ - [ ]	| LSM9DS1	| Gyro, Accelerometer, magnetometer
+ - [ ]	| ADS1115	| 4-CH ADC
+ - [ ]	| 24LC256	| EEPROM
 
 ## Credit
 

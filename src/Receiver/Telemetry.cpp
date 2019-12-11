@@ -29,7 +29,7 @@ float Telemetry::altitude(){
 }
 
 float Telemetry::voltage(){
-	return (analogRead(V_BAT) / 1024.0) * 33.0;
+	return (analogRead(V_BAT) / 1024.0) * (1/0.033);
 }
 
 void Telemetry::calibrate_altitude(float k){

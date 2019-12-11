@@ -23,21 +23,21 @@ https://github.com/thomasfla/Linux-ESPNOW
 
 
 ## Supported I2C devices
-| Support	| Name		| Description							|
+| Support		| Name			| Description							|
 |---------------|---------------|---------------------------------------------------------------|
-| - [x] 	| BMP280 	| Temp, Altitude, Pressure					|
-| - [ ] 	| MPU-6050	| Gyro, Acceleremeter						|
-| - [ ] 	| LSM303D	| Compass, 3D accelerometer and 3D magnetometer module		|
-| - [ ]		| MPU-9250	| Gyro, Accelerometer + AK8963 magnetometer			|
-| - [ ]		| HMC5883	| Magnetomer							|
-| - [ ]		| ITG-3200	| 'Gaming' gyro							|
-| - [ ]		| INA219	| Bi-directional current meter					|
-| - [ ]		| Wii IR Sensor	| Tracks the 4 brighest IR Points in FOV (Missile tracking?)	|
-| - [ ]		| ZOE/SAM-M8Q	| GPS module							|
-| - [ ]		| XA1110	| GPS module							|
-| - [ ]		| LSM9DS1	| Gyro, Accelerometer, magnetometer				|
-| - [ ]		| ADS1115	| 4-CH ADC							|
-| - [ ]		| 24LC256	| EEPROM							|
+|<ul>[x]</ul>	| BMP280 		| Temp, Altitude, Pressure					|
+|<ul>[ ]</ul>	| MPU-6050		| Gyro, Acceleremeter						|
+|<ul>[ ]</ul>	| LSM303D		| Compass, 3D accelerometer and 3D magnetometer module		|
+|<ul>[ ]</ul>	| MPU-9250		| Gyro, Accelerometer + AK8963 magnetometer			|
+|<ul>[ ]</ul>	| HMC5883		| Magnetomer							|
+|<ul>[ ]</ul>	| ITG-3200		| 'Gaming' gyro							|
+|<ul>[ ]</ul>	| INA219		| Bi-directional current meter					|
+|<ul>[ ]</ul>	| Wii IR Sensor	| Tracks the 4 brighest IR Points in FOV (Missile tracking?)	|
+|<ul>[ ]</ul>	| ZOE/SAM-M8Q	| GPS module							|
+|<ul>[ ]</ul>	| XA1110		| GPS module							|
+|<ul>[ ]</ul>	| LSM9DS1		| Gyro, Accelerometer, magnetometer				|
+|<ul>[ ]</ul>	| ADS1115		| 4-CH ADC							|
+|<ul>[ ]</ul>	| 24LC256		| EEPROM							|
 
 ## Credit
 

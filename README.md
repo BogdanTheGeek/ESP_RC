@@ -21,3 +21,7 @@ https://github.com/thomasfla/Linux-ESPNOW
  - [ ] Return to home mode (GPS)
  - [ ] Flight-controller features?
 
+## Credit
+
+WifiEspNow library : https://github.com/yoursunny/WifiEspNow
+Espressif in their holyness.

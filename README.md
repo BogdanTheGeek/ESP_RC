@@ -21,6 +21,17 @@ https://github.com/thomasfla/Linux-ESPNOW
  - [ ] Return to home mode (GPS)
  - [ ] Flight-controller features?
 
+
+## Supported I2C devices
+Support	| Name		| Description
+--------|---------------|------------
+ - [x] 	| BMP280 	| Temp, Altitude, Pressure
+ - [ ] 	| MPU-6050	| Gyro, Acceleremeter
+ - [ ] 	| LSM303D	| Compass, 3D accelerometer and 3D magnetometer module
+ - [ ]	| MPU-9250	| Gyro, Accelerometer + AK8963 magnetometer
+ - [ ]	| HMC5883	| Magnetomer
+ - [ ]	| ITG-3200	| 'Gaming' gyro
+
 ## Credit
 
 WifiEspNow library : https://github.com/yoursunny/WifiEspNow

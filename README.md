@@ -12,12 +12,12 @@ There are no designs yet for a transmitter however there is a Linux Project that
 https://github.com/thomasfla/Linux-ESPNOW
 
 ##Features 
- [x] Built in baterry voltage telemetry
- [] I2C telemetry
- [] Bluetooth controller support for ESP32
- [] GPS support
- [] Multiple vehicle profiles configurable via AP
- [] Easy vehicle controls setup via AP
- [] Return to home mode (GPS)
- [] Flight-controller features?
+ - [x] Built in baterry voltage telemetry
+ - [ ] I2C telemetry
+ - [ ] Bluetooth controller support for ESP32
+ - [ ] GPS support
+ - [ ] Multiple vehicle profiles configurable via AP
+ - [ ] Easy vehicle controls setup via AP
+ - [ ] Return to home mode (GPS)
+ - [ ] Flight-controller features?
 

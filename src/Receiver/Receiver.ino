@@ -3,7 +3,8 @@
 #include "Channels.h"
 #include "Communication.h"
 
-
+const int channel_map[6] = {CH0, CH1, CH2, CH3, CH4, CH5};
+Channel *channel[6];
 
 static uint8_t TRANSMITTER[] {0x5E, 0xCF, 0x7F, 0x90, 0xFA, 0xE8};
 
@@ -16,6 +17,12 @@ void printReceivedMessage(const uint8_t mac[6], const uint8_t* buf, size_t count
 }
 
 void setup() {
+
+  for (int i = 0; i < 6; ++i)
+  {
+    channel[i] = new Channel(channel_map[i]);
+  }
+
   Serial.begin(115200);
   Serial.println();
 
@@ -39,7 +46,7 @@ void setup() {
     Serial.println("ESP-Now couldnt add peer");
     ESP.restart();
   }
-  
+
 }
 
 void loop() {

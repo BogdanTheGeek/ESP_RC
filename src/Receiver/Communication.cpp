@@ -12,7 +12,7 @@ NowConnection::NowConnection(){
 
 
 	if (!WifiEspNow.begin()) {
-		#ifdef(DEBUG)
+		#if defined(DEBUG_OUT)
 		Serial.println("ESP-Now failed to start");
 		#endif
 	  	ESP.restart();
@@ -23,7 +23,7 @@ NowConnection::NowConnection(){
 	this->set_peer_mac(TX_MAC);
 
 	if (!WifiEspNow.addPeer(PEER)) {
-		#ifdef(DEBUG)
+		#if defined(DEBUG_OUT)
 	  	Serial.println("ESP-Now couldnt add peer");
 	  	#endif
 	  	ESP.restart();
@@ -57,7 +57,7 @@ void NowConnection::set_peer_mac(String MAC){
 }
 
 void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, void* cbarg){
-	#ifdef(DEBUG)
+	#if defined(DEBUG_OUT)
 	Serial.printf("Message from %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 	#endif
 	for (int i = 0; i < count; ++i) {
@@ -68,6 +68,13 @@ void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, voi
 }
 
 void NowConnection::send(){
-	int len = snprintf(packet_out, sizeof(packet_out));
-	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(packet_out), len);
+	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(packet_out), sizeof(packet_out));
+}
+
+char* NowConnection::get_pkt_out(){
+	return packet_out;
+}
+
+char* NowConnection::get_pkt_in(){
+	return packet_in;
 }

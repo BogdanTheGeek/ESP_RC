@@ -12,14 +12,14 @@ void setup() {
 	channel[i] = new Channel(channel_map[i]);
 	}
 
-	#ifdef(DEBUG)
+	#if defined(DEBUG_OUT)
 	Serial.begin(9600);
 	#endif
 
 	connection = new NowConnection();
 	delay(500);
 
-	#ifdef(DEBUG)
+	#if defined(DEBUG_OUT)
 	String mac = connection->my_mac();
 	Serial.println("My MAC:");
 	Serial.println(mac);
@@ -29,7 +29,7 @@ void setup() {
 
 void loop() {
   connection->send();
-  #ifdef(DEBUG)
+  #if defined(DEBUG_OUT)
   Serial.println("Sent");
   #endif
   delay(1000);

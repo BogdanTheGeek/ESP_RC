@@ -3,7 +3,7 @@
 #define SMOL_BOY_V1
 
 // MAC address of Transmitter
-#define TX_MAC	"A4:CF:12:33:33:F1"
+#define TX_MAC	"CE:50:E3:5D:06:64"
 
 
 //#define TELEMETRY

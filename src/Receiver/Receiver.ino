@@ -1,57 +1,28 @@
-#include "Configuration.h"
-
-#include "Channels.h"
-#include "Communication.h"
+#include "libs.h"
 
 const int channel_map[6] = {CH0, CH1, CH2, CH3, CH4, CH5};
 Channel *channel[6];
 
-static uint8_t TRANSMITTER[] {0x5E, 0xCF, 0x7F, 0x90, 0xFA, 0xE8};
-
-void printReceivedMessage(const uint8_t mac[6], const uint8_t* buf, size_t count, void* cbarg) {
-  Serial.printf("Message from %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-  for (int i = 0; i < count; ++i) {
-    Serial.print(static_cast<char>(buf[i]));
-  }
-  Serial.println();
-}
+NowConnection *connection;
 
 void setup() {
 
-  for (int i = 0; i < 6; ++i)
-  {
-    channel[i] = new Channel(channel_map[i]);
-  }
+	for (int i = 0; i < 6; ++i)
+	{
+	channel[i] = new Channel(channel_map[i]);
+	}
 
-  Serial.begin(115200);
-  Serial.println();
-
-  WiFi.persistent(false);
-  WiFi.mode(WIFI_AP);
-  WiFi.softAP("ESPNOW", nullptr, 3);
-  WiFi.softAPdisconnect(false);
-
-  Serial.print("MAC address of this Receiver is ");
-  Serial.println(WiFi.softAPmacAddress());
-
-
-  if (!WifiEspNow.begin()) {
-    Serial.println("ESP-Now failed to start");
-    ESP.restart();
-  }
-
-  WifiEspNow.onReceive(printReceivedMessage, nullptr);
-
-  if (!WifiEspNow.addPeer(TRANSMITTER)) {
-    Serial.println("ESP-Now couldnt add peer");
-    ESP.restart();
-  }
+	Serial.begin(9600);
+	connection = new NowConnection();
+	delay(500);
+	String mac = connection->my_mac();
+	Serial.println("My MAC:");
+	Serial.println(mac);
 
 }
 
 void loop() {
-  char msg[60];
-  int len = snprintf(msg, sizeof(msg), "hello ESP-NOW from %s at %lu", WiFi.softAPmacAddress().c_str(), millis());
-  WifiEspNow.send(TRANSMITTER, reinterpret_cast<const uint8_t*>(msg), len);
+  connection->send();
+  Serial.println("Sent");
   delay(1000);
 }

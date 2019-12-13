@@ -1,3 +1,4 @@
+#include "Configuration.h"
 #include <Arduino.h>
 
 #if defined(BMP280)

@@ -1,3 +1,4 @@
+#include "Configuration.h"
 #include "Channels.h"
 
 Channel::Channel(int pin){

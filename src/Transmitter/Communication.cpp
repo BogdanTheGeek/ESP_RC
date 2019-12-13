@@ -62,7 +62,9 @@ void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, voi
 	#endif
 	for (int i = 0; i < count; ++i) {
 		packet_in[i] = static_cast<char>(buf[i]);
-	  Serial.print(packet_in[i]);
+		#if defined(DEBUG)
+	  	Serial.print(packet_in[i]);
+	  	#endif
 	}
 
 }

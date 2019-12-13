@@ -1,7 +1,7 @@
 #include "Communication.h"
 
-char packet_received[250];
-
+char packet_in[250];
+char packet_out[250];
 
 NowConnection::NowConnection(){
 
@@ -12,8 +12,10 @@ NowConnection::NowConnection(){
 
 
 	if (!WifiEspNow.begin()) {
-	  Serial.println("ESP-Now failed to start");
-	  ESP.restart();
+		#ifdef(DEBUG)
+		Serial.println("ESP-Now failed to start");
+		#endif
+	  	ESP.restart();
 	}
 
 	WifiEspNow.onReceive(receive_handler, nullptr);
@@ -21,8 +23,10 @@ NowConnection::NowConnection(){
 	this->set_peer_mac(TX_MAC);
 
 	if (!WifiEspNow.addPeer(PEER)) {
-	  Serial.println("ESP-Now couldnt add peer");
-	  ESP.restart();
+		#ifdef(DEBUG)
+	  	Serial.println("ESP-Now couldnt add peer");
+	  	#endif
+	  	ESP.restart();
 	}
 
 #if defined(ESP8266)
@@ -53,19 +57,17 @@ void NowConnection::set_peer_mac(String MAC){
 }
 
 void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, void* cbarg){
-	
-
+	#ifdef(DEBUG)
 	Serial.printf("Message from %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-	
+	#endif
 	for (int i = 0; i < count; ++i) {
-		packet_received[i] = static_cast<char>(buf[i]);
-	  Serial.print(packet_received[i]);
+		packet_in[i] = static_cast<char>(buf[i]);
+	  Serial.print(packet_in[i]);
 	}
 
 }
 
 void NowConnection::send(){
-	  char msg[60];
-	int len = snprintf(msg, sizeof(msg), "hello ESP-NOW from %s at %lu", WiFi.softAPmacAddress().c_str(), millis());
-	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(msg), len);
+	int len = snprintf(packet_out, sizeof(packet_out));
+	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(packet_out), len);
 }

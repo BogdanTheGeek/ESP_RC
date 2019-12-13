@@ -15,9 +15,10 @@ public:
 	void send();
 	String my_mac();
 	void set_peer_mac(String MAC);
-	uint8_t PEER[6];
+	
 private:
 	String ME;
+	uint8_t PEER[6];
 	
 };
 

@@ -42,10 +42,10 @@ String NowConnection::my_mac(){
 	return ME;
 }
 void NowConnection::set_peer_mac(String MAC){
-	char buf[17];
+	char buf[18];
 	char * pEnd;
 
-	MAC.toCharArray(buf, 17);
+	MAC.toCharArray(buf, 18);
 
 	for (int i = 0; i < 6; ++i){
 		PEER[i] = (uint8_t)strtol(&buf[i*3], NULL, 16);
@@ -65,8 +65,7 @@ void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, voi
 }
 
 void NowConnection::send(){
-	char msg[60];
-  	int len = snprintf(msg, sizeof(msg), "hello ESP-NOW from %s at %lu", WiFi.softAPmacAddress().c_str(), millis());
-  	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(msg), len);
-  	delay(1000);
+	  char msg[60];
+	int len = snprintf(msg, sizeof(msg), "hello ESP-NOW from %s at %lu", WiFi.softAPmacAddress().c_str(), millis());
+	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(msg), len);
 }

@@ -19,6 +19,12 @@ void setup() {
 	Serial.println("My MAC:");
 	Serial.println(mac);
 
+	Serial.println("PEER MAC:");
+	for (int i = 0; i < 6; ++i)
+	{
+		Serial.print(connection->PEER[i], HEX);
+	}
+
 }
 
 void loop() {

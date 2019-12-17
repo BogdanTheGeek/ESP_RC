@@ -5,6 +5,19 @@ Channel *channel[6];
 
 NowConnection *connection;
 
+typedef struct {
+	uint8_t ch0_pos;
+	uint8_t ch1_pos;
+	uint8_t ch2_pos;
+	uint8_t ch3_pos;
+	uint8_t ch4_pos;
+	uint8_t ch5_pos;
+
+}CONTROLS;
+
+CONTROLS position_data;
+char* in;
+
 void setup() {
 
 	for (int i = 0; i < 6; ++i)
@@ -25,12 +38,13 @@ void setup() {
 	Serial.println(mac);
 	#endif
 
+
+	in = connection->get_pkt_in();
+
 }
 
 void loop() {
-  connection->send();
-  #if defined(DEBUG_OUT)
-  Serial.println("Sent");
-  #endif
-  delay(1000);
+	memcpy(&position_data, in, sizeof(in));
+
+	channel[0]->set(position_data.ch0_pos);
 }

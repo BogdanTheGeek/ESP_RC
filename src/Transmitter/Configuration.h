@@ -3,5 +3,5 @@
 
 #define DEBUG_OUT
 // MAC address of Transmitter
-#define TX_MAC	"CE:50:E3:5D:06:64"
+#define TX_MAC	"BE:DD:C2:9D:26:20"
 

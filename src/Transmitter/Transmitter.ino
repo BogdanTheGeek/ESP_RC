@@ -1,6 +1,6 @@
 #include "libs.h" 
-NowConnection *connection;
 
+NowConnection *connection;
 
 typedef struct {
 	uint8_t ch0_pos;
@@ -13,6 +13,7 @@ typedef struct {
 }CONTROLS;
 
 CONTROLS position_data;
+char* out;
 
 void setup(){
 
@@ -28,17 +29,16 @@ void setup(){
 	Serial.println(mac);
 	#endif
 
-	char* out = connection->get_pkt_out();
+	out = connection->get_pkt_out();
 	memcpy(out, &position_data, sizeof(position_data));
 
 }
 
 void loop(){
 
-	connection->send();
-	#if defined(DEBUG_OUT)
-	Serial.println("Sent");
-	#endif
-	delay(1000);
+	position_data.ch0_pos = map(analogRead(36),0,4095,0,255);
+	memcpy(out, &position_data, sizeof(position_data));
+  	connection->send();
+	delay(50);
 
 }

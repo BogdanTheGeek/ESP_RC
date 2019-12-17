@@ -10,6 +10,9 @@ ESP8266 6-CH receiver with Battery voltage monitoring and I2C peripherals for mo
 
 There are no designs yet for a transmitter however there is a Linux Project that allows Direct comunication through ESP-Now from a PC. This might come in handy:
 https://github.com/thomasfla/Linux-ESPNOW
+The first working transmitter will hopefully be able to use a buetooth controller. From my research, the xbox one s controller is a bit tricky but the PS3 controller has a ESP-IDF library available here:
+https://github.com/jvpernis/esp32-ps3
+In the future we might want to build a custom controller with maybe even an LCD screen, accelerometer and so on.
 
 ## Features 
  - [x] Built in baterry voltage telemetry

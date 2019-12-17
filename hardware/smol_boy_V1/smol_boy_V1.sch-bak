@@ -130,46 +130,17 @@ $EndComp
 Wire Wire Line
 	6050 5100 6050 4900
 Connection ~ 6050 4900
-Wire Wire Line
-	5750 4900 5650 4900
-Wire Wire Line
-	5650 4900 5650 4550
-Wire Wire Line
-	5650 3100 5750 3100
-Wire Wire Line
-	5650 3450 5750 3450
-Connection ~ 5650 3450
-Wire Wire Line
-	5650 3450 5650 3100
-Wire Wire Line
-	5650 3750 5750 3750
-Connection ~ 5650 3750
-Wire Wire Line
-	5650 3750 5650 3450
-Wire Wire Line
-	5650 4150 5750 4150
-Connection ~ 5650 4150
-Wire Wire Line
-	5650 4150 5650 3750
-Wire Wire Line
-	5650 4550 5750 4550
-Connection ~ 5650 4550
-Wire Wire Line
-	5650 4550 5650 4150
 $Comp
 L power:+5V #PWR0102
 U 1 1 5DF0AB13
-P 5650 2700
-F 0 "#PWR0102" H 5650 2550 50  0001 C CNN
-F 1 "+5V" H 5665 2873 50  0000 C CNN
-F 2 "" H 5650 2700 50  0001 C CNN
-F 3 "" H 5650 2700 50  0001 C CNN
-	1    5650 2700
+P 5800 2750
+F 0 "#PWR0102" H 5800 2600 50  0001 C CNN
+F 1 "+5V" H 5815 2923 50  0000 C CNN
+F 2 "" H 5800 2750 50  0001 C CNN
+F 3 "" H 5800 2750 50  0001 C CNN
+	1    5800 2750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 3100 5650 2700
-Connection ~ 5650 3100
 $Comp
 L power:GND #PWR0103
 U 1 1 5DF0DE15
@@ -338,44 +309,32 @@ Wire Wire Line
 	3100 1750 3100 1650
 Wire Wire Line
 	2650 4750 2650 4650
-Text GLabel 5500 3150 0    50   Input ~ 0
+Text GLabel 5550 3100 0    50   Input ~ 0
 CH0
-Text GLabel 5500 3500 0    50   Input ~ 0
+Text GLabel 5550 3450 0    50   Input ~ 0
 CH1
-Text GLabel 5500 3800 0    50   Input ~ 0
+Text GLabel 5550 3750 0    50   Input ~ 0
 CH2
-Text GLabel 5500 4200 0    50   Input ~ 0
+Text GLabel 5550 4150 0    50   Input ~ 0
 CH3
-Text GLabel 5500 4600 0    50   Input ~ 0
+Text GLabel 5550 4550 0    50   Input ~ 0
 CH4
-Text GLabel 5500 4950 0    50   Input ~ 0
+Text GLabel 5550 4900 0    50   Input ~ 0
 CH5
 Text GLabel 4400 1700 3    50   Input ~ 0
 SDA
 Text GLabel 4500 1700 3    50   Input ~ 0
 SCL
 Wire Wire Line
-	5500 3150 5850 3150
-Wire Wire Line
 	5850 3150 5850 3100
-Wire Wire Line
-	5500 3500 5850 3500
 Wire Wire Line
 	5850 3500 5850 3450
 Wire Wire Line
-	5500 3800 5850 3800
-Wire Wire Line
 	5850 3800 5850 3750
-Wire Wire Line
-	5500 4200 5850 4200
 Wire Wire Line
 	5850 4200 5850 4150
 Wire Wire Line
-	5500 4600 5850 4600
-Wire Wire Line
 	5850 4600 5850 4550
-Wire Wire Line
-	5500 4950 5850 4950
 Wire Wire Line
 	5850 4950 5850 4900
 Text GLabel 3050 4800 3    50   Input ~ 0
@@ -689,4 +648,45 @@ Wire Wire Line
 	4100 1550 4100 1350
 Wire Wire Line
 	3850 1350 3850 1550
+Wire Wire Line
+	5850 4950 5800 4950
+Wire Wire Line
+	5800 4950 5800 4600
+Wire Wire Line
+	5850 3150 5800 3150
+Connection ~ 5800 3150
+Wire Wire Line
+	5800 3150 5800 2750
+Wire Wire Line
+	5850 3500 5800 3500
+Connection ~ 5800 3500
+Wire Wire Line
+	5800 3500 5800 3150
+Wire Wire Line
+	5850 3800 5800 3800
+Connection ~ 5800 3800
+Wire Wire Line
+	5800 3800 5800 3500
+Wire Wire Line
+	5850 4200 5800 4200
+Connection ~ 5800 4200
+Wire Wire Line
+	5800 4200 5800 3800
+Wire Wire Line
+	5850 4600 5800 4600
+Connection ~ 5800 4600
+Wire Wire Line
+	5800 4600 5800 4200
+Wire Wire Line
+	5550 3100 5750 3100
+Wire Wire Line
+	5550 3450 5750 3450
+Wire Wire Line
+	5550 3750 5750 3750
+Wire Wire Line
+	5550 4150 5750 4150
+Wire Wire Line
+	5550 4550 5750 4550
+Wire Wire Line
+	5550 4900 5750 4900
 $EndSCHEMATC

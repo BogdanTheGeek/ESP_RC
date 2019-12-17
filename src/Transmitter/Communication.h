@@ -17,6 +17,7 @@ public:
 	void set_peer_mac(String MAC);
 	char* get_pkt_out();
 	char* get_pkt_in();
+	int status();
 	
 private:
 	String ME;

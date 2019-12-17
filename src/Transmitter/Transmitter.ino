@@ -30,7 +30,6 @@ void setup(){
 	#endif
 
 	out = connection->get_pkt_out();
-	memcpy(out, &position_data, sizeof(position_data));
 
 }
 
@@ -39,6 +38,10 @@ void loop(){
 	position_data.ch0_pos = map(analogRead(36),0,4095,0,255);
 	memcpy(out, &position_data, sizeof(position_data));
   	connection->send();
+  	#if defined(DEBUG_OUT)
+  	Serial.println("Sent");
+  	#endif
+	
 	delay(50);
 
 }

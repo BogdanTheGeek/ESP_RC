@@ -80,3 +80,11 @@ char* NowConnection::get_pkt_out(){
 char* NowConnection::get_pkt_in(){
 	return packet_in;
 }
+
+int NowConnection::status(){
+	if (WifiEspNow.getSendStatus() ==  WifiEspNowSendStatus::OK)
+	{
+		return 0;
+	}
+	return 1;
+}

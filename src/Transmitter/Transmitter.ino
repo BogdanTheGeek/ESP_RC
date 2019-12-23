@@ -3,17 +3,7 @@
 NowConnection *connection;
 Controller *controller;
 
-typedef struct {
-	uint8_t ch0_pos;
-	uint8_t ch1_pos;
-	uint8_t ch2_pos;
-	uint8_t ch3_pos;
-	uint8_t ch4_pos;
-	uint8_t ch5_pos;
-
-}CONTROLS;
-
-CONTROLS position_data;
+CONTROLS channels_pos;
 char* out;
 
 void setup(){
@@ -22,7 +12,7 @@ void setup(){
 	Serial.begin(9600);
 	#endif
 	connection = new NowConnection();
-	controller = new Controller(0);
+	controller = new Controller(&channels_pos, 0);
 	delay(500);
 
 	#if defined(DEBUG_OUT)
@@ -37,15 +27,12 @@ void setup(){
 
 void loop(){
 
-	// position_data.ch0_pos = map(analogRead(36),0,4095,0,255);
-	// memcpy(out, &position_data, sizeof(position_data));
- //  	connection->send();
- //  	#if defined(DEBUG_OUT)
- //  	Serial.println("Sent");
- //  	#endif
+	memcpy(out, &channels_pos, sizeof(channels_pos));
+  	connection->send(sizeof(channels_pos));
+  	#if defined(DEBUG_OUT)
+  	Serial.println("Sent");
+  	#endif
 	
-	// delay(50);
-	Serial.println(controller->lx());
-	delay(500);
+	delay(100);
 
 }

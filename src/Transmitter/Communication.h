@@ -12,7 +12,7 @@ class NowConnection {
 public:
 	NowConnection();
 
-	void send();
+	void send(int l);
 	String my_mac();
 	void set_peer_mac(String MAC);
 	char* get_pkt_out();

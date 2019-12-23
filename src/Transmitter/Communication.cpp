@@ -69,8 +69,8 @@ void receive_handler(const uint8_t mac[6], const uint8_t* buf, size_t count, voi
 
 }
 
-void NowConnection::send(){
-	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(packet_out), sizeof(packet_out));
+void NowConnection::send(int l){
+	WifiEspNow.send(PEER, reinterpret_cast<const uint8_t*>(packet_out), l);
 }
 
 char* NowConnection::get_pkt_out(){

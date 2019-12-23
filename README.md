@@ -17,7 +17,7 @@ In the future we might want to build a custom controller with maybe even an LCD 
 ## Features 
  - [x] Built in baterry voltage telemetry
  - [x] I2C expansion port telemetry
- - [ ] Bluetooth controller support for ESP32
+ - [x] Bluetooth controller support for ESP32
  - [ ] GPS support
  - [ ] Multiple vehicle profiles configurable via AP
  - [ ] Easy vehicle controls setup via AP

@@ -1,6 +1,7 @@
 #include "libs.h" 
 
 NowConnection *connection;
+Controller *controller;
 
 typedef struct {
 	uint8_t ch0_pos;
@@ -21,6 +22,7 @@ void setup(){
 	Serial.begin(9600);
 	#endif
 	connection = new NowConnection();
+	controller = new Controller(0);
 	delay(500);
 
 	#if defined(DEBUG_OUT)
@@ -35,13 +37,15 @@ void setup(){
 
 void loop(){
 
-	position_data.ch0_pos = map(analogRead(36),0,4095,0,255);
-	memcpy(out, &position_data, sizeof(position_data));
-  	connection->send();
-  	#if defined(DEBUG_OUT)
-  	Serial.println("Sent");
-  	#endif
+	// position_data.ch0_pos = map(analogRead(36),0,4095,0,255);
+	// memcpy(out, &position_data, sizeof(position_data));
+ //  	connection->send();
+ //  	#if defined(DEBUG_OUT)
+ //  	Serial.println("Sent");
+ //  	#endif
 	
-	delay(50);
+	// delay(50);
+	Serial.println(controller->lx());
+	delay(500);
 
 }

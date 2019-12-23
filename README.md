@@ -45,4 +45,5 @@ In the future we might want to build a custom controller with maybe even an LCD 
 ## Credit
 
 WifiEspNow library : https://github.com/yoursunny/WifiEspNow
+ESP32-PS3 library : https://github.com/jvpernis/esp32-ps3/tree/develop
 Espressif in their holyness.

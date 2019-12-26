@@ -47,4 +47,9 @@ void loop() {
 	memcpy(&position_data, in, sizeof(in));
 
 	channel[0]->set(position_data.ch0_pos);
+	channel[1]->set(position_data.ch1_pos);
+	channel[2]->set(position_data.ch2_pos);
+	channel[3]->set(position_data.ch3_pos);
+	channel[4]->set(position_data.ch4_pos);
+	channel[5]->set(position_data.ch5_pos);
 }

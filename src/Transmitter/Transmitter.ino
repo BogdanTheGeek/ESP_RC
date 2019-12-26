@@ -33,6 +33,6 @@ void loop(){
   	Serial.println("Sent");
   	#endif
 	
-	delay(100);
+	delay(50);
 
 }
